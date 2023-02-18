@@ -4,6 +4,10 @@
 	border: 1px solid #fff;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+	transition: all 0.3s ease-in-out;
+}
+.menu-item-list-wrapper:hover {
+	transform: scale(1.02);
 }
 .item-name {
 	font-size: 25px;
