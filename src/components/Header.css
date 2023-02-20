@@ -1,0 +1,10 @@
+.profile-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.profile-img-header {
+	height: 30px;
+	background: red;
+}

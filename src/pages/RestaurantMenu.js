@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { IMG_CDN_URL, RESAURENT_ID_API_LINK } from '../Config';
+import React from 'react';
+import { IMG_CDN_URL } from '../config';
 import Shimmer from '../components/Shimmer';
 import './RestaurantMenu.css';
 import MenuList from '../components/MenuList';
+import useRestaurantMenu from '../hooks/useRestaurantMenu';
+import { useParams } from 'react-router-dom';
 
 const RestaurantMenu = () => {
 	const { id } = useParams();
-	const getMenu = async () => {
-		const response = await fetch(RESAURENT_ID_API_LINK + id);
-		const json = await response.json();
-		setRestaurantInfo(json);
-	};
-	useEffect(() => {
-		getMenu();
-	}, []);
-	const [restaurantInfo, setRestaurantInfo] = useState(null);
+	const restaurantInfo = useRestaurantMenu(id);
+
 	return !restaurantInfo ? (
 		<Shimmer />
 	) : (
@@ -27,6 +21,7 @@ const RestaurantMenu = () => {
 							IMG_CDN_URL +
 							restaurantInfo?.data?.cloudinaryImageId
 						}
+						alt="img"
 					/>
 				</div>
 				<div className="restaurant-menu--right">

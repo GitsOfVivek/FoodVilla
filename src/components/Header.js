@@ -1,8 +1,14 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import profileImg from '../assets/img/user-profile-avatar.png';
+import './Header.css';
+import { useState } from 'react';
+import useOnline from '../hooks/useOnline';
 
 const Header = () => {
-	const [isLogedIn, setIsLogedIn] = useState(false);
+	const [isLogged, setIsLogged] = useState(true);
+	const isOnline = useOnline();
+	console.log(isOnline);
+
 	return (
 		<div className="header">
 			<div className="nav">
@@ -23,20 +29,16 @@ const Header = () => {
 					<Link className="nav-link" to={'/cart'}>
 						Cart
 					</Link>
-					{isLogedIn ? (
-						<Link
-							to={'/signup'}
-							onClick={() => setIsLogedIn(false)}
-							className="btn-signup">
-							SignUp
+					{isLogged ? (
+						<Link className="nav-link profile-link" to={'/profile'}>
+							<i
+								style={{
+									color: `${isOnline ? 'green' : 'red'}`,
+								}}
+								className="fa-solid fa-user"></i>
 						</Link>
 					) : (
-						<Link
-							to={'/login'}
-							onClick={() => {
-								setIsLogedIn(true);
-							}}
-							className="btn-login">
+						<Link to={'/login'} className="btn-login">
 							LogIn
 						</Link>
 					)}

@@ -158,6 +158,7 @@ a {
 	background-color: transparent;
 	color: var(--color-secondary);
 	border: 2px solid var(--color-text);
+	width: fit-content;
 }
 
 .footer {
@@ -207,4 +208,11 @@ a {
 	margin-top: 20px;
 	padding: 5px 10px;
 	border: 2px solid var(--color-text);
+}
+
+.subheading {
+	margin: 20px 0;
+}
+.container {
+	margin: 20px 0;
 }

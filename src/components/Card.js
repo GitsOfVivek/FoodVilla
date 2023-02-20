@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMG_CDN_URL } from '../Config';
+import { IMG_CDN_URL } from '../config';
 
 const Card = ({ name, avgRating, cuisines, cloudinaryImageId }) => {
 	return (

@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
 import RestaurantMenu from './pages/RestaurantMenu';
 import './App.css';
 
@@ -56,6 +57,10 @@ const appRouter = createBrowserRouter([
 			{
 				path: '/signup',
 				element: <SignUp />,
+			},
+			{
+				path: '/profile',
+				element: <Profile />,
 			},
 			{
 				path: '/restaurant/:id',
