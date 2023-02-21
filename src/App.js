@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Error from './pages/Error';
-import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
 import RestaurantMenu from './pages/RestaurantMenu';
 import './App.css';
+
+const Profile = lazy(() => import('./pages/Profile'));
+const About = lazy(() => import('./pages/About'));
 
 const AppLayout = () => {
 	return (
@@ -36,7 +37,11 @@ const appRouter = createBrowserRouter([
 			},
 			{
 				path: '/about',
-				element: <About />,
+				element: (
+					<Suspense fallback={<h1>About is Loading...</h1>}>
+						<About />
+					</Suspense>
+				),
 			},
 			{
 				path: '/services',
@@ -60,7 +65,11 @@ const appRouter = createBrowserRouter([
 			},
 			{
 				path: '/profile',
-				element: <Profile />,
+				element: (
+					<Suspense fallback={<h1>Profile Loading...</h1>}>
+						<Profile />
+					</Suspense>
+				),
 			},
 			{
 				path: '/restaurant/:id',

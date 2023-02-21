@@ -7,7 +7,6 @@ import useOnline from '../hooks/useOnline';
 const Header = () => {
 	const [isLogged, setIsLogged] = useState(true);
 	const isOnline = useOnline();
-	console.log(isOnline);
 
 	return (
 		<div className="header">
