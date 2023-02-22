@@ -1,11 +1,11 @@
 // one way data binding in React
-
-import Card from './Card';
-import Shimmer from './Shimmer';
-import Search from './Search';
+import './Main.css';
+import Card from '../Card/Card';
+import Shimmer from '../Shimmer/Shimmer';
+import Search from '../Search/Search';
 import { Link } from 'react-router-dom';
-import useRestaurant from '../hooks/useRestaurant';
-import useOnline from '../hooks/useOnline';
+import useRestaurant from '../../hooks/useRestaurant';
+import useOnline from '../../hooks/useOnline';
 
 const Main = () => {
 	const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =

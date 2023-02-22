@@ -1,19 +1,19 @@
 import React, { lazy, Suspense } from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import Error from './pages/Error';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import Cart from './pages/Cart';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import RestaurantMenu from './pages/RestaurantMenu';
+import Error from './pages/Error/Error';
+import Services from './pages/Services/Services';
+import Contact from './pages/Contact/Contact';
+import Cart from './pages/Cart/Cart';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import RestaurantMenu from './pages/RestaurantMenu/RestaurantMenu';
 import './App.css';
 
-const Profile = lazy(() => import('./pages/Profile'));
-const About = lazy(() => import('./pages/About'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const About = lazy(() => import('./pages/About/About'));
 
 const AppLayout = () => {
 	return (

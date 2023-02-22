@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import profileImg from '../assets/img/user-profile-avatar.png';
 import './Header.css';
 import { useState } from 'react';
-import useOnline from '../hooks/useOnline';
+import useOnline from '../../hooks/useOnline';
 
 const Header = () => {
 	const [isLogged, setIsLogged] = useState(true);

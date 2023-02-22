@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
+import './Error.css';
 
 const Error = () => {
 	const { statusText, status } = useRouteError();

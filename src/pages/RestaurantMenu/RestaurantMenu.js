@@ -1,9 +1,9 @@
 import React from 'react';
-import { IMG_CDN_URL } from '../config';
-import Shimmer from '../components/Shimmer';
+import { IMG_CDN_URL } from '../../config';
+import Shimmer from '../../components/Shimmer/Shimmer';
 import './RestaurantMenu.css';
-import MenuList from '../components/MenuList';
-import useRestaurantMenu from '../hooks/useRestaurantMenu';
+import MenuList from '../../components/MenuList/MenuList';
+import useRestaurantMenu from '../../hooks/useRestaurantMenu';
 import { useParams } from 'react-router-dom';
 
 const RestaurantMenu = () => {
