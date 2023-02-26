@@ -1,4 +1,4 @@
-import { API_LINK } from '../config';
+import { API_LINK } from '../utils/config';
 import { useState, useEffect } from 'react';
 
 const useRestaurant = () => {

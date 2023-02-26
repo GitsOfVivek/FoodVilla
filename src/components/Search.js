@@ -9,16 +9,16 @@ const filterData = (searchText, restaurants) => {
 const Search = props => {
 	const [searchText, setSearchText] = useState('');
 	return (
-		<div className="search-container">
+		<div className="flex items-center justify-center m-auto">
 			<input
 				type="text"
-				className="search-input"
+				className="p-2 border-2 border-orange-500 outline-none"
 				value={searchText}
 				placeholder={'Search'}
 				onChange={e => setSearchText(e.target.value)}
 			/>
 			<button
-				className="search-btn"
+				className="text-white border-2 outline-none border-orange-500 p-2 bg-orange-500"
 				onClick={() => {
 					const data = filterData(searchText, props?.allRestaurants);
 					props?.setFilteredRestaurants(data);

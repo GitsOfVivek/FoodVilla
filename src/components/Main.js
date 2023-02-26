@@ -1,11 +1,11 @@
 // one way data binding in React
-import './Main.css';
-import Card from '../Card/Card';
-import Shimmer from '../Shimmer/Shimmer';
-import Search from '../Search/Search';
+
+import RestaurantCard from './RestaurantCard';
+import Shimmer from './Shimmer';
+import Search from './Search';
 import { Link } from 'react-router-dom';
-import useRestaurant from '../../hooks/useRestaurant';
-import useOnline from '../../hooks/useOnline';
+import useRestaurant from '../hooks/useRestaurant';
+import useOnline from '../hooks/useOnline';
 
 const Main = () => {
 	const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =
@@ -27,7 +27,7 @@ const Main = () => {
 				allRestaurants={allRestaurants}
 				setFilteredRestaurants={setFilteredRestaurants}
 			/>
-			<div className="main-containt">
+			<div className="flex items-center justify-center flex-wrap w-4/5 mx-auto">
 				{!filteredRestaurants ? (
 					<h1>No Restaurant Found</h1>
 				) : (
@@ -36,7 +36,7 @@ const Main = () => {
 							<Link
 								key={card?.data?.id}
 								to={'/restaurant/' + card.data.id}>
-								<Card {...card.data} />
+								<RestaurantCard {...card.data} />
 							</Link>
 						);
 					})
