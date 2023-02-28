@@ -1,20 +1,13 @@
 // one way data binding in React
-
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import useRestaurant from '../hooks/useRestaurant';
-import useOnline from '../hooks/useOnline';
 
 const Main = () => {
 	const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =
 		useRestaurant();
-
-	const isOnline = useOnline();
-	if (!isOnline) {
-		return <h1>🚫 No internet, please check connection!!</h1>;
-	}
 
 	return !allRestaurants ? (
 		<>
