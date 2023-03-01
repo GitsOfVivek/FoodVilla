@@ -11,6 +11,8 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import RestaurantMenu from './pages/RestaurantMenu';
 import CartContext from './utils/CartContext';
+import { Provider } from 'react-redux';
+import myStore from './utils/reduxStore/myStore';
 
 const Profile = lazy(() => import('./pages/Profile'));
 const About = lazy(() => import('./pages/About'));
@@ -31,15 +33,17 @@ const AppLayout = () => {
 	});
 
 	return (
-		<CartContext.Provider
-			value={{
-				cartDetails: cartDetails,
-				setCartDetails: setCartDetails,
-			}}>
-			<Header />
-			<Outlet />
-			<Footer />
-		</CartContext.Provider>
+		<Provider store={myStore}>
+			<CartContext.Provider
+				value={{
+					cartDetails: cartDetails,
+					setCartDetails: setCartDetails,
+				}}>
+				<Header />
+				<Outlet />
+				<Footer />
+			</CartContext.Provider>
+		</Provider>
 	);
 };
 

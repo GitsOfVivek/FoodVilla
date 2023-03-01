@@ -56,11 +56,16 @@ const RestaurantMenu = () => {
 			</div>
 			<div className="flex justify-center items-center gap-3 flex-wrap w-4/5 mx-auto">
 				{Object.values(restaurantInfo?.data?.menu?.items).map(el => (
-					<MenuList
-						restaurantImg={restaurantInfo?.data?.cloudinaryImageId}
+					<div
 						key={el?.id}
-						{...el}
-					/>
+						className="flex flex-col p-1 rounded-t-md">
+						<MenuList
+							restaurantImg={
+								restaurantInfo?.data?.cloudinaryImageId
+							}
+							{...el}
+						/>
+					</div>
 				))}
 			</div>
 		</div>
