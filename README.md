@@ -2,7 +2,7 @@
 
 Note: Install `Allow CORS` extenstion in Chrome
 
-Live Demo: https://vivek-foodvilla.netlify.app/
+Live Demo: https://food-villa-peach.vercel.app/
 
 A React Food Delevery App.
 Work with Real World API (Swiggy API) using CORS.
