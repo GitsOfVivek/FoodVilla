@@ -20,8 +20,19 @@ const useRestaurant = () => {
 		try {
 			const res = await fetch(API_LINK);
 			const json = await res.json();
-			setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-			setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+			let idx;
+			switch (json?.data?.cards.length) {
+				case 1:
+					idx = 0;
+					break;
+				case 2:
+					idx = 1;
+					break;
+				default:
+					idx = 2;
+			}
+			setFilteredRestaurants(json?.data?.cards[idx]?.data?.data?.cards);
+			setAllRestaurants(json?.data?.cards[idx]?.data?.data?.cards);
 		} catch (e) {
 			setFilteredRestaurants(
 				restaurantList?.data?.cards[2]?.data?.data?.cards
